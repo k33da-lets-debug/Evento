@@ -5,10 +5,10 @@
 *.log
 *.pot
 *.pyc
-evento_django_project/__pycache__/
-evento_django_project/local_settings.py
-evento_django_project/db.sqlite3
-evento_django_project/media
+./evento_django_project/Project/__pycache__/
+./evento_django_project/Project/local_settings.py
+./evento_django_project/Project/db.sqlite3
+./evento_django_project/Project//media
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
