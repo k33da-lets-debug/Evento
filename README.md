@@ -34,6 +34,11 @@
  
     Now run this project by typing
     `python manage.py runserver`
+    
+    
+ ##Structure of project
+ Actual django project is inside evento_django_project\Project
+ You can find settings folder which is used to separate local and production settings file(No need to cahange that)
  
 
  
