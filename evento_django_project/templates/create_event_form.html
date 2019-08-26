@@ -1,0 +1,48 @@
+{% load crispy_forms_tags %}
+<!--/ Create event form /-->
+
+  <div class="box-collapse">
+    <div class="title-box-d">
+      <h3 class="title-d">Create event</h3>
+    </div>
+    <span class="close-box-collapse right-boxed ion-ios-close"></span>
+    <div class="box-collapse-wrap form">
+      
+      <form class="form-a" method='POST' action="{% url "staticmediapages:create_event" %}">
+        {% csrf_token %}
+
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            {{ form.first_name |as_crispy_field }}            
+          </div>
+          <div class="col-md-6 mb-2">
+             {{ form.last_name |as_crispy_field }}
+           </div>
+           <div class="col-md-12 mb-2">
+             {{ form.email |as_crispy_field }}
+           </div>
+           <div class="col-md-12 mb-2">
+             {{ form.contact_no |as_crispy_field }}
+           </div>
+           <div class="col-md-12 mb-2">
+              {{ form.category |as_crispy_field }}
+           </div>
+           <div class="col-md-12 mb-2">
+             {{ form.company_name |as_crispy_field }}
+           </div>
+           <div class="col-md-12 mb-2">
+             {{ form.date |as_crispy_field }}
+           </div>
+           <div class="col-md-12 mb-2">
+             {{ form.event_description |as_crispy_field }}
+           </div>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-b">Create event</button>
+          </div>
+        </div>
+      </form> 
+
+    </div>
+  </div>
+  <!--/ Create form End /-->

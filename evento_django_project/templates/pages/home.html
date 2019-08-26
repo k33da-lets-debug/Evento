@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<!--/ Carousel Star /-->
+<div class="intro intro-carousel">
+  <div id="carousel" class="owl-carousel owl-theme">
+    
+
+        {% for carosoul_detail in view.get_carosoul_details %}
+        
+
+          <div class="carousel-item-a intro-item bg-image" style="background-image:url({{carosoul_detail.image.url}})">
+          <div class="overlay overlay-a"></div>
+          <div class="intro-content display-table">
+            <div class="table-cell">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="intro-body">
+                      <p class="intro-title-top">{{carosoul_detail.subtitle}}
+                        <br> </p>
+                        <h1 class="intro-title mb-4">
+                          {{carosoul_detail.title}}
+                          </h1>
+                          <p class="intro-subtitle intro-price">
+                            <a href="#"><span class="price-a">Book Now!</span></a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        {% endfor %}
+
+    </div>
+  </div>
+            <!--/ Carousel end /-->
+            
+            <!--About us-->
+            <section class="about-us py-5" id="about-us">
+              <div class="container mt-5">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-single-box">
+                      <h1 class="title-single">About us</h1>
+                    </div>
+                    
+                    <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore etae magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <!-- <button type="button" class="btn btn-b-n">Let's Know More</button> -->
+                    
+                  </div>
+                  <div class="col-md-6" style="overflow:hidden;">
+                    <img src="{% static "img/about_us.png" %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!--About us end-->
+
+            <!--/ Services Star /-->
+            <section class="section-services pt-4 pb-4 section-background-properties">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="title-wrap d-flex justify-content-between">
+                      <div class="title-box">
+                        <h2 class="title-a">Event management services</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card-box-c foo">
+                      <div class="card-header-c d-flex">
+                        <div class="card-box-ico">
+                          <span class="fa fa-certificate"></span>
+                        </div>
+                        <div class="card-title-c align-self-center">
+                          <h2 class="title-c">Corporate events</h2>
+                        </div>
+                      </div>
+                      <div class="card-body-c">
+                        <p class="content-c">
+                          Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
+                          convallis a pellentesque
+                          nec, egestas non nisi.
+                        </p>
+                      </div>
+                      <div class="card-footer-c">
+                        <a href="event_management_evento.html#corporate_event" class="link-c link-icon">Read more
+                          <span class="ion-ios-arrow-forward"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card-box-c foo">
+                      <div class="card-header-c d-flex">
+                        <div class="card-box-ico">
+                          <span class="fa fa-heart"></span>
+                        </div>
+                        <div class="card-title-c align-self-center">
+                          <h2 class="title-c">Wedding planner</h2>
+                        </div>
+                      </div>
+                      <div class="card-body-c">
+                        <p class="content-c">
+                          Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit
+                          aliquet elit, eget tincidunt
+                          nibh pulvinar a.
+                        </p>
+                      </div>
+                      <div class="card-footer-c">
+                        <a href="event_management_evento.html#wedding_planner" class="link-c link-icon">Read more
+                          <span class="ion-ios-arrow-forward"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card-box-c foo">
+                      <div class="card-header-c d-flex">
+                        <div class="card-box-ico">
+                          <span class="fa fa-hashtag"></span>
+                        </div>
+                        <div class="card-title-c align-self-center">
+                          <h2 class="title-c">Social events</h2>
+                        </div>
+                      </div>
+                      <div class="card-body-c">
+                        <p class="content-c">
+                          Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
+                          convallis a pellentesque
+                          nec, egestas non nisi.
+                        </p>
+                      </div>
+                      <div class="card-footer-c">
+                        <a href="event_management_evento.html#social_events" class="link-c link-icon">Read more
+                          <span class="ion-ios-arrow-forward"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </section>
+            <!--/ Services End /-->
+            
+            
+
+<!--/ Gallery Star /-->
+<section class="section-agents pt-4 pb-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-wrap d-flex justify-content-between">
+          <div class="title-box">
+            <h2 class="title-a">Gallery</h2>
+          </div>
+          <div class="title-link">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+<div id="new-carousel" class="owl-carousel owl-theme">
+
+  {% for gallery_detail in view.get_gallery_details %}
+  <div class="carousel-item-c">
+    <div class="card-box-b card-shadow news-box">
+      <div class="img-box-b">
+        <img src="{{gallery_detail.image.url}}" alt="" class="img-b img-fluid">
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+
+</div>
+</section>
+
+<!--/ Gallery Star End /-->
+
+
+
+<!--/ Testimonials Star /-->
+<section class="section-testimonials nav-arrow-a pt-4 pb-2 section-background-properties">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-wrap d-flex justify-content-between">
+          <div class="title-box">
+            <h2 class="title-a">Testimonials</h2>
+
+
+            <div class="text-center my-5">
+
+              <div class="wrapper-carousel-fix">
+                <!-- Carousel Wrapper -->
+                <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+                data-interval="false" style="text-align:center;">
+                <!--Slides-->
+                <div class="carousel-inner clearfix" role="listbox">
+                {% for testimonial_detail in view.get_testimonial_details %}
+                  <!--First slide-->
+                  <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}" >
+
+                    <div class="testimonial">
+                      <!--Avatar-->
+                      <div class="avatar mx-auto mb-4">
+                        <img src="{{testimonial_detail.image.url}}" style="max-height:250px;"class="rounded-circle img-fluid"
+                        alt="Testimonial">
+                      </div>
+                      <!--Content-->
+                      <p>
+                        <i class="fa fa-quote-left" aria-hidden="true"></i> 
+                        {{testimonial_detail.testimonial}}
+                        <i class="fa fa-quote-right" aria-hidden="true"></i> 
+                      </p>
+                      <h4 class="font-weight-bold">{{testimonial_detail.full_name}}</h4>
+                      <h6 class="font-weight-bold my-3">{{testimonial_detail.designation}}</h6>
+
+                    </div>
+                  </div>
+                  <!--First slide-->
+                  {% endfor %}
+                  
+                    </div>
+                    <!--Slides-->
+                    <!--Controls-->
+                    <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button"
+                    data-slide="prev">
+                    <span class="fa fa-chevron-left fa-2x" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button"
+                  data-slide="next">
+                  <span class="fa fa-chevron-right fa-2x" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+
+                <!--Controls-->
+              </div>
+              <!-- Carousel Wrapper -->
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!--/ Testimonials End /-->
+
+<!--Companies-->
+<section id="supporters" class="pt-4 pb-2 section-testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title-wrap d-flex justify-content-between">
+          <div class="title-box">
+            <h2 class="title-a mb-4">Companies</h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <section class="customer-logos slider">
+
+    {% for company_detail in view.get_company_details %}
+      <div class="slide"><img src="{{company_detail.image.url}}"></div>
+    {% endfor %}
+      
+    </section>
+    
+  </div>
+</div>
+</section>
+<!--Companies end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
