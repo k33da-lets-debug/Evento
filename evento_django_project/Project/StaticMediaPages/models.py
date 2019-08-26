@@ -1,9 +1,13 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import RegexValidator
 
 # Main Models
 
 class CreateEvent(models.Model):
+    # Validations
+    name_regex = RegexValidator(regex='([a-zA-Z])\D*([a-zA-Z])$', message="Special characters, numbers and spaces are not allowed.")
+    contact_no_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     #Misc
     CATEGORY_CHOICES = (
         ('CORPORATE_EVENT', 'Corporate event'),
@@ -11,10 +15,10 @@ class CreateEvent(models.Model):
         ('SOCIAL_EVENT', 'Social event'),
     )
     #Fields
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50,blank=True)
-    email = models.CharField(max_length=50)
-    contact_no = models.CharField(max_length=50)
+    first_name = models.CharField(validators=[name_regex],max_length=50)
+    last_name = models.CharField(validators=[name_regex],max_length=50,blank=True)
+    email = models.EmailField(max_length=50)
+    contact_no = models.CharField(validators=[contact_no_regex],max_length=17)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     company_name = models.CharField(max_length=100,blank=True)
     date = models.DateTimeField(auto_now=False)
@@ -26,12 +30,16 @@ class CreateEvent(models.Model):
         return '/'
 
 class ContactUs(models.Model):
+    # Validations
+    name_regex = RegexValidator(regex='([a-zA-Z])\D*([a-zA-Z])$', message="Special characters, numbers and spaces are not allowed.")
+    contact_no_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+
     #Misc
     #Fields
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50,blank=True)
+    first_name = models.CharField(validators=[name_regex],max_length=50)
+    last_name = models.CharField(validators=[name_regex],max_length=50,blank=True)
     email = models.CharField(max_length=50)
-    contact_no = models.CharField(max_length=50)
+    contact_no = models.CharField(validators=[contact_no_regex],max_length=50)
     message = models.TextField(max_length=300)
 
 

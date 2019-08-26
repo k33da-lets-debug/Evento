@@ -70,9 +70,9 @@
               Event management
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="event_management_evento.html#corporate_event">Corporate events</a>
-              <a class="dropdown-item" href="event_management_evento.html#wedding_planner">Wedding planner</a>
-              <a class="dropdown-item" href="event_management_evento.html#social_events">Social events</a>
+              <a class="dropdown-item" href="{% url 'staticmediapages:event_management' %}#corporate_event">Corporate events</a>
+              <a class="dropdown-item" href="{% url 'staticmediapages:event_management' %}#wedding_planner">Wedding planner</a>
+              <a class="dropdown-item" href="{% url 'staticmediapages:event_management' %}#social_events">Social events</a>
             </div>
           </li>
 
@@ -228,8 +228,7 @@
 <script src="{% static "lib/scrollreveal/scrollreveal.min.js"%}"></script>
 <script src="{% static "lib/jquery/jquery.scrollTo.min.js"%}"></script>
 <script src="{% static "lib/slick/slick.min.js"%}"></script>
-<!-- Contact Form JavaScript File -->
-<script src="contactform/contactform.js"></script>
+
 
 <!-- Template Main Javascript File -->
 <script src="{% static "js/main.js" %}"></script>

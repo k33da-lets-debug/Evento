@@ -31,7 +31,11 @@ class HomeCreateView(CreateView):
         return Companies.objects.all()[0:10]
 
 class EventManagementCreateView(CreateView):
-    pass
+    model=CreateEvent
+    template_name = 'pages/event_management.html'
+    form_class = CreateEventForm
+
+
 
 class OurEventsCreateView(CreateView):
     pass
