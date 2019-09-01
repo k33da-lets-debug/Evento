@@ -41,7 +41,11 @@
 
   <div class="click-closed"></div>
   <!--/ Create event form /-->
-  {% include "create_event_form.html" %} 
+
+  {% if "/contact_us" not in request.get_full_path %}
+  {% include "create_event_form.html"%} 
+  {% endif %}
+
   <!--/ Create form End /-->
 
   <!--/ Nav Star /-->
@@ -80,14 +84,19 @@
             <a class="nav-link" href="our_events_evento.html">Our events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact us</a>
+            <a class="nav-link" href="{% url 'staticmediapages:contact_us' %}">Contact us</a>
           </li>
         </ul>
       </div>
-      <button type="button" class="btn btn-b-n btn-outline navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
+
+      
+        {% if "/contact_us" not in request.get_full_path %}
+              <button type="button" class="btn btn-b-n btn-outline navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
         <span class="" aria-hidden="true"> Create event</span>
       </button>
+        {% endif %}
+
     </div>
   </nav>
   <!--/ Nav End /-->
@@ -138,13 +147,13 @@
                     <i class="fa fa-angle-right"></i> <a href="{% url 'staticmediapages:home' %}">Home</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Event Management</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'staticmediapages:event_management' %}">Event Management</a>
                   </li>
                   <li class="item-list-a">
                     <i class="fa fa-angle-right"></i> <a href="#">Our events</a>
                   </li>
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Contact us</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'staticmediapages:contact_us' %}">Contact us</a>
                   </li>
                   <li class="item-list-a">
                     <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
