@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CreateEvent,Carosoul,Gallery,Testimonials,Companies
+from .models import CreateEvent,Carosoul,Gallery,Testimonials,Companies,ContactUs
 
 # Admin class definations
 class CreateEventAdmin(admin.ModelAdmin):
@@ -47,6 +47,14 @@ class CompanyAdmin(admin.ModelAdmin):
         verbose_name = 'Company detail'
         verbose_name_plural = 'Companies details'
 
+class ContactUsAdmin(admin.ModelAdmin):
+    fields=['first_name','last_name','email','contact_no','message']
+    list_display = ('first_name','last_name','email','contact_no','message')
+
+    class Meta:
+        verbose_name = 'Create event query'
+        verbose_name_plural = 'Create event queries'
+
 
 # Admin class registrations
 admin.site.register(CreateEvent, CreateEventAdmin)
@@ -58,3 +66,5 @@ admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Testimonials, TestimonialAdmin)
 
 admin.site.register(Companies, CompanyAdmin)
+
+admin.site.register(ContactUs, ContactUsAdmin)

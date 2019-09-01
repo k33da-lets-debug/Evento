@@ -153,7 +153,7 @@ $("#navbarc ul li a[href^='#']").on('click', function(e) {
 
    // prevent default anchor click behavior
    e.preventDefault()
-
+	console.log("Scrollspy activated");
    // store hash
    var hash = this.hash
 

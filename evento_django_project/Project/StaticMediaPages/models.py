@@ -36,11 +36,15 @@ class ContactUs(models.Model):
 
     #Misc
     #Fields
+    #TODO: Add datetime field to identify when user posted this query also update it in admin.py
     first_name = models.CharField(validators=[name_regex],max_length=50)
     last_name = models.CharField(validators=[name_regex],max_length=50,blank=True)
     email = models.CharField(max_length=50)
     contact_no = models.CharField(validators=[contact_no_regex],max_length=50)
     message = models.TextField(max_length=300)
+    
+    def get_absolute_url(self):
+        return '/'
 
 
 # User Interface modification models

@@ -40,6 +40,35 @@ class CreateEventForm(ModelForm):
         self.fields['category'].widget.attrs['class']='form-control-lg form-control-a'
         self.fields['company_name'].widget.attrs['class']='form-control-lg form-control-a'
         self.fields['date'].widget.attrs['class']='form-control-lg form-control-a'
+
+
+class ContactUsForm(ModelForm):
+    class Meta:
+        model = models.ContactUs
+        fields = ['first_name','last_name','email','contact_no','message']
+
+    def __init__(self, *args, **kwargs):
+
+        #Crispy forms configurations
+        super(ContactUsForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_class = 'form-a'
+
+        #Form attrs configurations
+        #Placeholder attr
+        self.fields['first_name'].widget.attrs['placeholder'] = 'Your first name'
+        self.fields['last_name'].widget.attrs['placeholder'] = 'Your last name'
+        self.fields['email'].widget.attrs['placeholder'] = 'Your email'
+        self.fields['contact_no'].widget.attrs['placeholder'] = 'Your contact no'
+        self.fields['message'].widget.attrs['placeholder'] = 'Your message'
+
+
+        #Css attr
+        self.fields['first_name'].widget.attrs['class']='form-control-lg form-control-a'
+        self.fields['last_name'].widget.attrs['class']='form-control-lg form-control-a'
+        self.fields['email'].widget.attrs['class']='form-control-lg form-control-a'
+        self.fields['contact_no'].widget.attrs['class']='form-control-lg form-control-a'
+        
         
         
 

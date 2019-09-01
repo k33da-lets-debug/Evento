@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import FormView
+from django.views.generic import TemplateView
 
-from .models import CreateEvent, Carosoul, Gallery, Testimonials,Companies
-from .forms import CreateEventForm
+from .models import CreateEvent, Carosoul, Gallery, Testimonials,Companies,ContactUs
+from .forms import CreateEventForm, ContactUsForm
 
 def render_test_view(request):
     return render(request,'base.html')
@@ -40,9 +41,15 @@ class EventManagementCreateView(CreateView):
 class OurEventsCreateView(CreateView):
     pass
 
+class ContactUsView(CreateView):
+    model=ContactUs
+    template_name = 'pages/contact_us.html'
+    form_class = ContactUsForm
+
 
 # Form views
 class CreateEventFormView(FormView):
     template_name = 'create_event_form.html'
     form_class = CreateEventForm
     success_url = '/'
+
