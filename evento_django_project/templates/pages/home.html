@@ -200,7 +200,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="title-wrap d-flex justify-content-between">
+        <div class="title-wrap no-flex justify-content-between">
           <div class="title-box">
             <h2 class="title-a">Testimonials</h2>
 
@@ -224,14 +224,14 @@
                         alt="Testimonial">
                       </div>
                       <!--Content-->
-                      <p>
+                      <div class="col-md-10 offset-md-1 wrapCntrl">
                         <i class="fa fa-quote-left" aria-hidden="true"></i> 
                         {{testimonial_detail.testimonial}}
                         <i class="fa fa-quote-right" aria-hidden="true"></i> 
-                      </p>
-                      <h4 class="font-weight-bold">{{testimonial_detail.full_name}}</h4>
-                      <h6 class="font-weight-bold my-3">{{testimonial_detail.designation}}</h6>
+                      </div>
 
+                        <h4 class="font-weight-bold">{{testimonial_detail.full_name}}</h4>
+                        <h6 class="font-weight-bold my-3">{{testimonial_detail.designation}}</h6>
                     </div>
                   </div>
                   <!--First slide-->

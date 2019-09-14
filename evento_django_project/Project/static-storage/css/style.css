@@ -229,6 +229,10 @@ a:hover {
 
 /*------/ Space Padding /------*/
 
+.section-t9 {
+  padding-top: 9rem;
+}
+
 .section-t8 {
   padding-top: 8rem;
 }
@@ -2265,4 +2269,11 @@ Course
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+
+/*Extra CSS*/
+
+.wrapCntrl {
+  overflow-wrap: break-word;
 }
